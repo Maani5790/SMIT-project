@@ -1,22 +1,4 @@
 <!DOCTYPE html>
-
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    
-    <!-- <link rel="stylesheet" href="style.css"> -->
-     
-
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    <link rel="stylesheet" href="dashboard.css">
-
-    
-</head>
-<body>
-    <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -28,47 +10,42 @@
     <link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Pacifico&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="admin-panel.css">
-    <title>Dashboard</title>
+    <!-- <link rel="stylesheet" href="add-class.css"> -->
+    <!-- <link rel="stylesheet" href="/Views/addClass/addclass.css"> -->
+    <!-- <link rel="stylesheet" href="/Views/addClass/addclass.css"> -->
+    <link rel="stylesheet" href="/Views/addStudent/student.css">
+
+    
+    <title>AdminSite</title>
 </head>
 
 <body>
 
     
-
     
+    
+
+    <!-- SIDEBAR -->
     <section id="sidebar">
-        <h2>SMIT</h2>
-        <a href="#" class="brand"><i class='bx bxs-smile icon'></i> <b></b></a>
+        <a href="#" class="brand"><i class='bx bxs-smile icon'></i> <b>SMIT</b></a>
         <ul class="side-menu">
-            <li><a href="#" class="active"><i class='bx bxs-dashboard icon'></i> Dashboard</a></li>
+            <li><a href="/Views/dashboard.html"><i class='bx bxs-dashboard icon'></i> Dashboard</a></li>
             <li class="divider" data-text="main">Main</li>
-            <li>
-                <a href="#"><i class='bx bxs-inbox icon'></i> Elements <i
-                        class='bx bx-chevron-right icon-right'></i></a>
-                <ul class="side-dropdown">
-                    <li><a href="#">Alert</a></li>
-                    <li><a href="#">Badges</a></li>
-                    <li><a href="#">Breadcrumbs</a></li>
-                    <li><a href="#">Button</a></li>
-                </ul>
-            </li>
-            <li><a href="#"><i class='bx bxs-chart icon'></i> Charts</a></li>
-            <li><a href="#"><i class='bx bxs-widget icon'></i> Widgets</a></li>
+            <li><a href="add-class.html" class="active"><i class='bx bxs-chart icon'></i> Add Class</a></li>
+            <li><a href="#"><i class='bx bxs-graduation icon'></i> Add Student</a></li>
+            <li><a href="#"><i class='bx bx-book-open icon' ></i> Find Student</a></li>
+
         </ul>
     </section>
+    <!-- SIDEBAR -->
 
-
-    
+    <!-- NAVBAR -->
     <section id="content">
-        
+        <!-- NAVBAR -->
         <nav>
             <i class='bx bx-menu toggle-sidebar'></i>
             <form action="#">
-                <div class="form-group">
-                    <input type="text" placeholder="Search...">
-                    <i class='bx bx-search icon'></i>
-                </div>
+               
             </form>
             <a href="#" class="nav-link">
                 <i class='bx bxs-bell icon'></i>
@@ -80,7 +57,7 @@
             </a>
             <span class="divider"></span>
             <div class="profile">
-                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGVvcGxlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                <img src="/Images/img_avatar2.png"
                     alt="">
                 <ul class="profile-link">
                     <li><a href="#"><i class='bx bxs-user-circle icon'></i> Profile</a></li>
@@ -89,53 +66,66 @@
                 </ul>
             </div>
         </nav>
-        
-        <main>
-            <h1 class="title">Dashboard</h1>
-            <ul class="breadcrumbs">
-                <li><a href="#">Home</a></li>
-                <li class="divider">/</li>
-                <li><a href="#" class="active">Dashboard</a></li>
-            </ul>
-            <div class="info-data">
-                <a href="#">
-                <div class="card p-5 bg-light shadow rounded-pill">
-                    <div class="head">
-                        <div class="mx-auto">
-                              <!-- <a href=""></a> <h2 class="text-dark"><b>Add New Class</b></h2> -->
-                              <a href="/Views/addClass/addclass.html" class="text-dark  mx-auto "  ><h2>Add Class</h2></a>
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="#">
-                <div class="card p-5 bg-primary shadow ">
-                    <div class="head">
-                        <div class="mx-auto">
-                            <a href="/Views/addStudent/student.html" class="text-dark mx-auto"><h2>Add New Student</h2></a>
+        <section>
+            <div class="page-wrapper bg-red p-t-180 p-b-100 font-robo">
+                <div class="wrapper wrapper--w960">
+                    <div class="card card-2">
+                        <div class="card-body">
+                            <h2 class="title">Create Class</h2>
+                            <form>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="input-group">
+                                            <select class="form-control mb-2 border-0" id="class-timings">
+                                                <option class="hidden" selected disabled>Select Your Class Timings
+                                                </option>
+                                                <option value="9to11">9am to 11am</option>
+                                                <option value="11to1">11am to 1pm</option>
+                                            </select>
+                                        </div>
+                                        <div class="input-group">
+                                            <select class="form-control mb-2 border-0" id="class-schedule">
+                                                <option class="hidden" selected disabled>Select Your Class Schedule
+                                                </option>
+                                                <option value="MWF">MWF (Monday, Wednesday, Friday)</option>
+                                                <option value="TTS">TTS (Tuesday, Thursday, Saturday)</option>
+                                            </select>
+                                        </div>
+                                        <div class="input-group">
+                                            <input class="input--style-2" type="text" placeholder="Teacher's Name"
+                                                id="teacher-name">
+                                        </div>
                             
-                        </div>
-                    </div>
-                </div>
-            </a>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="input-group">
+                                            <input class="input--style-2" type="text" placeholder="Section Name" id="section-name">
+                                        </div>
+                                        <div class="input-group">
+                                            <input class="input--style-2" type="text" placeholder="Course Name" id="course-name">
+                                        </div>
+                                        <div class="input-group">
+                                            <input class="input--style-2" type="text" placeholder="Batch Number"
+                                                id="batch-number">
+                                        </div>
+                                        
+                                    </div>
+                                </div>
 
-            <a href="#">
-                <div class="card p-5 bg-light shadow">
-                    <div class="head">
-                        <div  class="mx-auto">
-                           <h2 class="text-dark"><b>Find Student</b></h2>
+                            </form>
+                            <div class="p-t-30">
+                                <button onclick="addClass()" class="btn btn--radius btn--green">Add Class</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </a>
             </div>
-        </main>
-        <!-- MAIN -->
-    </section>
-    <!-- NAVBAR -->
+        </section>
+        
 
+        
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    <script type="module" src="admin-panel.js"></script>
+    <script type="module" src="add-class.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <script>
@@ -337,15 +327,8 @@
         var chart = new ApexCharts(document.querySelector("#chart"), options);
         chart.render();
     </script>
+    <script type="module" src="/Config/firebase.js"></script>
+    
 </body>
 
-</html>
-        
-               
-
-    <script type="module" src="db.js"></script>
-    <script type="module" src="../Config/firebase.js"></script>
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
-</body>
 </html>
