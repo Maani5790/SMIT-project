@@ -1,5 +1,5 @@
-import  signinFirebase  from "../config/firebase.js";
-
+import  {signinFirebase}  from "../Config/firebase.js";
+console.log("hello");
 window.signin = async function(){
 
     // getting user email and password from the field
