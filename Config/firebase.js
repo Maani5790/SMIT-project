@@ -1,6 +1,23 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-analytics.js";
 import { getAuth, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  doc,
+  setDoc,
+  getDoc,
+  getDocs,
+  query,
+  where,
+  onSnapshot
+} from "https://www.gstatic.com/firebasejs/9.11.0/firebase-firestore.js";
+
+
+
+
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyDYG_Xb8yhhAhzYyz_A4tS4DiiMqVviZMM",
@@ -16,7 +33,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth(app);
-
+const db = getFirestore(app);
 
 
 
@@ -31,13 +48,28 @@ function logoutfromfirebase() {
 }
 
 
+function addClassToDb(classSchedule, classTiming, teacherName, sectionName, courseName, batchNumber) {
+  return addDoc(collection(db, "Classes"), {
+      classSchedule,
+      classTiming,
+      teacherName,
+      sectionName,
+      courseName,
+      batchNumber,
+  });
+}
 
-// firebase sign up function 
+
+
+
+
+
 
 
 export {
   signinFirebase,
-  logoutfromfirebase
+  logoutfromfirebase,
+  addClassToDb
 
 }
 
